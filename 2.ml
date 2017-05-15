@@ -14,8 +14,17 @@ let rec dellt2 a list =
                 match (a, list) with
                         |(0, list) -> list
                         |(1, n2::r2) -> dellt2 0 r2             
-                        |(_, n1::r1) -> n1:: dellt2 (a-1) r1
+                        |(_, n1::r1) -> n1 :: dellt2 (a-1) r1
         else
                 failwith "Exception: Failure"
+;;
+
+let rec find a list =
+        match (a, list) with
+                |(_, []) -> false
+                |(_, n::rest) -> if n=a then
+                                         true
+                                 else
+                                         find a rest
 ;;
 
