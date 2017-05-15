@@ -5,7 +5,7 @@ let rec dellt a list =
                 else
                         let n::rest = list in dellt (a-1) rest
         else
-                failwith "Exception: Failure"
+                failwith "Error"
 ;;
 
 
@@ -16,7 +16,7 @@ let rec dellt2 a list =
                         |(1, n2::r2) -> dellt2 0 r2             
                         |(_, n1::r1) -> n1 :: dellt2 (a-1) r1
         else
-                failwith "Exception: Failure"
+                failwith "Error"
 ;;
 
 let rec find a list =
@@ -27,4 +27,16 @@ let rec find a list =
                                  else
                                          find a rest
 ;;
+
+let rec posl a list =
+        match (a, list) with
+                |(0, _) -> failwith "Not Exist..."
+                |(1, n2::r2) -> n2
+                |(_, n1::r1) -> posl (a-1) r1
+;;
+
+let divlist int list =
+        int / list
+;;
+
 
