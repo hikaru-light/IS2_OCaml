@@ -43,8 +43,16 @@ let rec divlist list1 list2 =
 
 let rec mul2list list =
         match list with
-                | [] -> []
                 | _::[] -> []
                 | n1::n2::rest -> n1*n2 :: mul2list (n2::rest)
+;;
+
+let rec chglist (a,b) list =
+        match list with
+                | [] -> []
+                | n::rest -> if n=a then
+                                     b :: chglist (a,b) rest
+                             else
+                                     n :: chglist (a,b) rest
 ;;
 
