@@ -41,3 +41,10 @@ let rec divlist list1 list2 =
                 |(n1::r1, n2::r2) -> n1/n2 :: divlist r1 r2
 ;;
 
+let rec mul2list list =
+        match list with
+                | [] -> []
+                | _::[] -> []
+                | n1::n2::rest -> n1*n2 :: mul2list (n2::rest)
+;;
+
