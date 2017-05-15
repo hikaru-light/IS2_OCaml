@@ -35,8 +35,9 @@ let rec posl a list =
                 |(_, n1::r1) -> posl (a-1) r1
 ;;
 
-let divlist int list =
-        int / list
+let rec divlist list1 list2 =
+        match (list1, list2) with
+                |([], []) -> []
+                |(n1::r1, n2::r2) -> n1/n2 :: divlist r1 r2
 ;;
-
 
